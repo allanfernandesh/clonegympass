@@ -1,0 +1,59 @@
+{
+  "env": {
+      "es2021": true
+  },
+  "extends": [
+      "plugin:react/recommended",
+      "standard",
+      "prettier",
+      "prettier/react",
+      "prettier/@typescript-eslint",
+      "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+      "ecmaFeatures": {
+          "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+  },
+  "plugins": [
+      "react",
+      "@typescript-eslint",
+      "prettier"
+  ],
+  "rules": {
+      "import/no-unresolved": 0,
+      "react/jsx-filename-extension": [1, {
+      "extensions": [
+          ".ts",
+          ".tsx"
+      ]
+      }],
+      "prettier/prettier": [
+          "error",
+          {
+              "singleQuote": true,
+              "trailingComma": "all",
+              "arrowParens": "avoid",
+              "endOfLine": "auto",
+              "semi": false
+          }
+      ],
+      "no-use-before-define": "off"
+  },
+  "overrides": [
+      {
+          "files": [
+              "__tests__/*.js"
+          ],
+          "rules": {
+              "react/jsx-filename-extension": "off"
+          },
+          "env": {
+              "jest": true
+          }
+      }
+  ]
+}
